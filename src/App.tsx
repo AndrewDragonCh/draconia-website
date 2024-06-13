@@ -1,23 +1,7 @@
-import { useEffect, useState } from "react";
-import { getServerStatus } from "./lib/getServerStatus";
-
-import type { ServerStatus } from "../Types";
+import { useServerStatus } from "./hooks/useServerStatus";
 
 function App() {
-  const [serverStatus, setServerStatus] = useState<ServerStatus | null>(null);
-
-  useEffect(() => {
-    const fetchServerStatus = async () => {
-      const response = await getServerStatus();
-      const data = await response.json();
-      setServerStatus(data);
-    };
-
-    fetchServerStatus();
-    const interval = setInterval(fetchServerStatus, 60000); // Update every minute
-
-    return () => clearInterval(interval); // Cleanup on component unmount
-  }, []);
+  const serverStatus = useServerStatus();
 
   return (
     <main>
