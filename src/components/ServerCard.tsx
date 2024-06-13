@@ -3,7 +3,7 @@ import { useServerStatus } from "../hooks/useServerStatus";
 
 function ServerCard({ width }: { width: string }) {
   const serverStatus = useServerStatus();
-  
+
   const [copySuccess, setCopySuccess] = useState('');
 
   const copyToClipboard = async (text: string) => {
@@ -17,7 +17,7 @@ function ServerCard({ width }: { width: string }) {
   };
 
   return (
-    <div id='Server Status Card' className={`flex flex-col items-center justify-center w-${width}`}>
+    <div id='Server Status Card' className={`${width}`}>
         <div
           onClick={() => copyToClipboard("play.draconia.world")}
           className="cursor-pointer relative text-center w-full p-3 border rounded-3xl"
@@ -25,7 +25,7 @@ function ServerCard({ width }: { width: string }) {
           <div id='IP' className="text-center mb-2">
             play.draconia.world
           </div>
-          <div id='Players Online' className="relative w-full bg-gray-200 rounded-full h-6 dark:bg-gray-700 overflow-hidden mt-2 mb-1">
+          <div id='Players Online' className="relative w-full bg-gray-200 rounded-full h-7 dark:bg-gray-700 overflow-hidden mt-2 mb-1">
             {serverStatus && serverStatus.players ? (
               <>
                 <span className="text-xs text-white whitespace-nowrap">
