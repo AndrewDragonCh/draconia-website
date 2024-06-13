@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useServerStatus } from "../hooks/useServerStatus";
 
-function ServerCard() {
+function ServerCard({ className }: { className: string }) {
   const serverStatus = useServerStatus();
   
   const [copySuccess, setCopySuccess] = useState('');
-  const [showTooltip, setShowTooltip] = useState(false);
 
   const copyToClipboard = async (text: string) => {
     try {
@@ -18,31 +17,37 @@ function ServerCard() {
   };
 
   return (
-    <div>
+    <div id='Server Status Card' className={`flex flex-col items-center justify-center ${className}`}>
       {serverStatus ? (
         <div
           onClick={() => copyToClipboard("play.draconia.world")}
-          onMouseEnter={() => setShowTooltip(true)}
-          onMouseLeave={() => setShowTooltip(false)}
-          className="cursor-pointer relative"
+          className="cursor-pointer relative text-center w-full p-3 border rounded-3xl"
         >
-          <div>
+          <div id='IP' className="text-center mb-2">
             play.draconia.world
-            {showTooltip && (
-              <div className="absolute top-[-5%] left-[19%] -translate-x-1/2 mb-2 p-1 bg-black text-white rounded-md text-xs whitespace-nowrap" >
-                Click to copy
-              </div>
-            )}
           </div>
-          {copySuccess && <p>{copySuccess}</p>}
-          <p>
-            {serverStatus.players.online} / {serverStatus.players.max} players online
-          </p>
-          <div dangerouslySetInnerHTML={{ __html: serverStatus.motd.html }} />
+          <div id='Players Online' className="relative w-full bg-gray-200 rounded-full h-6 dark:bg-gray-700 overflow-hidden mt-2 mb-1">
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <span className="text-xs text-white whitespace-nowrap">
+                {serverStatus.players.online} / {serverStatus.players.max} players online
+              </span>
+            </div>
+            <div
+              className="bg-blue-600 h-6 rounded-full"
+              style={{ width: `${(serverStatus.players.online / serverStatus.players.max) * 100}%` }}
+            ></div>
+          </div>
+          <div id='Copy Button' className="absolute right-4 p-1 bg-black text-white rounded-md text-xs whitespace-nowrap" >
+            {copySuccess || "Click to copy"}
+          </div>
         </div>
+        
       ) : (
         <p>Loading...</p>
       )}
+      
     </div>
   );
 }
