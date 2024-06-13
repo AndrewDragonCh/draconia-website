@@ -1,35 +1,38 @@
 import { useEffect, useState } from "react";
 import { getServerStatus } from "./lib/getServerStatus";
 
-function App() {
-  const [serverStatus, setServerStatus] = useState(null); // Initial state is null to indicate loading
+import type { ServerStatus } from "../Types";
 
-  // Get server status on mount and refresh the data every minute
+function App() {
+  const [serverStatus, setServerStatus] = useState<ServerStatus | null>(null);
+
   useEffect(() => {
-    // Define a function to fetch the server status and update the state
-    const fetchServerStatus = () => {
-      getServerStatus()
-        .then(response => response.json())
-        .then(data => setServerStatus(data))
-        .catch(error => console.error('Error fetching server status:', error));
+    const fetchServerStatus = async () => {
+      const response = await getServerStatus();
+      const data = await response.json();
+      setServerStatus(data);
     };
 
-    fetchServerStatus(); // Run immediately on mount
+    fetchServerStatus();
+    const interval = setInterval(fetchServerStatus, 60000); // Update every minute
 
-    const intervalId = setInterval(fetchServerStatus, 60000); // Fetch every minute to keep the data up to date
-
-    return () => clearInterval(intervalId); // Cleanup on unmount
+    return () => clearInterval(interval); // Cleanup on component unmount
   }, []);
 
   return (
     <main>
+      <h1>Server Status</h1>
       {serverStatus ? (
         <div>
-          <h1>Server Status</h1>
-          <pre>{JSON.stringify(serverStatus, null, 2)}</pre>
+          <h2>{serverStatus.hostname}</h2>
+          <p>
+            {serverStatus.players.online} / {serverStatus.players.max} players
+            online
+          </p>
+          <p>Version: {serverStatus.version}</p>
         </div>
       ) : (
-        <p>Loading server status...</p>
+        <p>Loading...</p>
       )}
     </main>
   );
