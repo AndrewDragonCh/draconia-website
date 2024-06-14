@@ -4,15 +4,16 @@ import { useServerStatus } from "../hooks/useServerStatus";
 function ServerCard({ width }: { width: string }) {
   const serverStatus = useServerStatus();
 
-  const [copySuccess, setCopySuccess] = useState('');
+  const [copySuccess, setCopySuccess] = useState('Click to copy');
 
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
       setCopySuccess('Copied!');
-      setTimeout(() => setCopySuccess(''), 2000); // Hide the message after 2 seconds
+      setTimeout(() => setCopySuccess('Click to copy'), 2000); // Hide the message after 2 seconds
     } catch (err) {
       setCopySuccess('Failed to copy');
+      setTimeout(() => setCopySuccess('Click to copy'), 2000);
     }
   };
 
@@ -41,7 +42,7 @@ function ServerCard({ width }: { width: string }) {
             )}
           </div>
           <div id='Copy Button' className="absolute -bottom-3 right-6 z-10 p-1 bg-white text-black rounded-md sm:text-xs text-[.5rem] shadow-inner" >
-            {copySuccess || "Click to copy"}
+            {copySuccess}
           </div>
         </div>
     </div>
