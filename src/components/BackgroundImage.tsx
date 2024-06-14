@@ -9,6 +9,7 @@ function BackgroundImage() {
       zIndex: -1,
     }}>
       <picture>
+        <source srcSet="/assets/images/background.avif" type="image/avif" />
         <source srcSet="/assets/images/background.webp" type="image/webp" />
         <img src="/assets/images/background.png" alt="Background" style={{ 
           filter: 'blur(12px) brightness(75%)',
