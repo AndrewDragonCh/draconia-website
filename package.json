@@ -16,11 +16,11 @@
   "main": "App.tsx",
   "dependencies": {
     "react": "19.0.0-rc-dfd30974ab-20240613",
-    "react-dom": "19.0.0-rc-dfd30974ab-20240613",
-    "types-react": "19.0.0-rc.1",
-    "types-react-dom": "19.0.0-rc.1"
+    "react-dom": "19.0.0-rc-dfd30974ab-20240613"
   },
   "devDependencies": {
+    "types-react": "19.0.0-rc.1",
+    "types-react-dom": "19.0.0-rc.1",
     "@types/react": "npm:types-react@rc",
     "@types/react-dom": "npm:types-react-dom@rc",
     "@typescript-eslint/eslint-plugin": "^7.13.0",
