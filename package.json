@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "engines": {
-    "node": ">=20.x",
+    "node": ">=22",
     "pnpm": ">=9"
   },
   "main": "App.tsx",

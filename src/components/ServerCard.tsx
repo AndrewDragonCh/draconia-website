@@ -24,7 +24,7 @@ function ServerCard({ width }: { width: string }) {
           className="cursor-pointer relative text-center w-full p-3 border-2 shadow-lg rounded-3xl"
         >
           <div id='IP' className="text-center mb-2 sm:text-xl text-base">
-            join.draconia.world
+            Coming Eventually!
           </div>
           <div id='Players Online' className="relative w-full bg-gray-500 rounded-full sm:h-10 h-7 overflow-hidden mt-2 mb-1">
             {serverStatus && serverStatus.players ? (
