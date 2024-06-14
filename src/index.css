@@ -21,7 +21,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/images/background.png');
-  filter: blur(12px) brightness(75%); /* Adjust the px value to increase or decrease the blur effect */
+  background-image: url('/images/background.webp');
+  filter: blur(12px) brightness(75%);
   z-index: -1;
 }
