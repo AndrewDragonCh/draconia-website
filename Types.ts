@@ -1,4 +1,4 @@
-export type ServerStatus = {
+export interface ServerStatus {
   ip: string;
   port: number;
   debug: {
@@ -59,4 +59,4 @@ export type ServerStatus = {
   };
   icon?: string;
   eula_blocked?: boolean;
-};
+}
