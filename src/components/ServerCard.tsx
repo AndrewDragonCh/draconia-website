@@ -46,7 +46,7 @@ function ServerCard({ width }: { width: string }) {
                 <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">Loading...</span>
               )
             ) : (
-              <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">Loading...</span>
+              <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">Error loading Status!</span>
             )}
           </div>
           <div id='Copy Button' className="absolute -bottom-3 right-6 z-10 p-1 bg-white text-black rounded-md sm:text-xs text-[.5rem] shadow-inner" >
