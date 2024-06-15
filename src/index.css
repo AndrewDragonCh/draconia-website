@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +8,15 @@
 :root {
   --foreground-rgb: 255,255,255;
   --background-rgb: 0, 0, 0;
+}
+
+@layer base {
+  h1 {
+    font-family: 'Macondo', system-ui;
+  }
+  html {
+    font-family: 'Noto Sans Display', system-ui;
+  }
 }
 
 body {
