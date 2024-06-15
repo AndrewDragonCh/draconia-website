@@ -1,18 +1,62 @@
 export type ServerStatus = {
-  motd: {
+  ip: string;
+  port: number;
+  debug: {
+    ping: boolean;
+    query: boolean;
+    srv: boolean;
+    querymismatch: boolean;
+    ipinsrv: boolean;
+    cnameinsrv: boolean;
+    animatedmotd: boolean;
+    cachehit: boolean;
+    cachetime: number;
+    cacheexpire: number;
+    apiversion: number;
+    error?: {
+      ping: string;
+      query: string;
+    }
+  };
+  motd?: {
     raw: string[];
     clean: string[];
     html: string[];
   };
-  players: {
+  players?: {
     online: number;
     max: number;
+    list: {
+      name: string;
+      uuid: string;
+    }[];
   };
-  version: string;
+  version?: string;
   online: boolean;
-  protocol: {
+  protocol?: {
     version: number;
+    name: string;
   };
   hostname: string;
-  eula_blocked: boolean;
+  software?: string;
+  map?: {
+    raw: string;
+    clean: string;
+    html: string;
+  };
+  plugins?: {
+    name: string;
+    version: string;
+  }[];
+  mods?: {
+    name: string;
+    version: string;
+  }[];
+  info?: {
+    raw: string[];
+    clean: string[];
+    html: string[];
+  };
+  icon?: string;
+  eula_blocked?: boolean;
 };

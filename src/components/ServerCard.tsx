@@ -23,20 +23,28 @@ function ServerCard({ width }: { width: string }) {
           onClick={() => copyToClipboard("join.draconia.world")}
           className="cursor-pointer relative text-center w-full p-3 border-2 shadow-lg rounded-3xl"
         >
-          <div id='IP' className="text-center mb-2 sm:text-xl text-base">
+          <div id='IP' className="text-center mb-2 sm:text-xl text-base text-white">
             Coming Eventually!
           </div>
           <div id='Players Online' className="relative w-full bg-gray-500 rounded-full sm:h-10 h-7 overflow-hidden mt-2 mb-1">
-            {serverStatus && serverStatus.players ? (
-              <>
+            {serverStatus ? (
+              serverStatus.online === false ? (
                 <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">
-                  {serverStatus.players.online} / {serverStatus.players.max} players online
+                  Server is offline!
                 </span>
-                <div
-                  className="bg-gray-900 h-6 rounded-full"
-                  style={{ width: `${(serverStatus.players.online / serverStatus.players.max) * 100}%` }}
-                ></div>
-              </>
+              ) : serverStatus.players ? (
+                <>
+                  <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">
+                    {serverStatus.players.online} / {serverStatus.players.max} players online
+                  </span>
+                  <div
+                    className="bg-gray-900 h-6 rounded-full"
+                    style={{ width: `${(serverStatus.players.online / serverStatus.players.max) * 100}%` }}
+                  ></div>
+                </>
+              ) : (
+                <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">Loading...</span>
+              )
             ) : (
               <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">Loading...</span>
             )}

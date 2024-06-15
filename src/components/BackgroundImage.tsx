@@ -1,4 +1,8 @@
+import useColorScheme from '../hooks/useColorScheme'; // Adjust the import path as necessary
+
 function BackgroundImage() {
+  const colorScheme = useColorScheme();
+
   return (
     <div style={{
       position: 'fixed',
@@ -9,14 +13,29 @@ function BackgroundImage() {
       zIndex: -1,
     }}>
       <picture>
-        <source srcSet="/assets/images/background.avif" type="image/avif" />
-        <source srcSet="/assets/images/background.webp" type="image/webp" />
-        <img src="/assets/images/background.png" alt="Background" style={{ 
-          filter: 'blur(12px) brightness(75%)',
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }} />
+        {colorScheme === 'dark' ? (
+          <>
+            <source srcSet="/assets/images/backgrounds/dark.avif" type="image/avif" />
+            <source srcSet="/assets/images/backgrounds/dark.webp" type="image/webp" />
+            <img src="/assets/images/backgrounds/dark.png" alt="Background" style={{ 
+              filter: 'brightness(90%)',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }} />
+          </>
+        ) : (
+          <>
+            <source srcSet="/assets/images/backgrounds/light.avif" type="image/avif" />
+            <source srcSet="/assets/images/backgrounds/light.webp" type="image/webp" />
+            <img src="/assets/images/backgrounds/light.png" alt="Background" style={{ 
+              filter: 'brightness(90%)',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }} />
+          </>
+        )}
       </picture>
     </div>
   );
