@@ -39,9 +39,27 @@
     <meta name="apple-mobile-web-app-title" content="Draconia" />
     <!-- <link rel="apple-touch-icon" href="/images/apple-icon.png" /> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Noto+Sans+Display&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/macondo.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/assets/fonts/noto.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+
+    <style>
+      @font-face {
+        font-family: "Noto Sans Display";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Noto Sans Display"),
+          url(/assets/fonts/noto.woff2) format("woff2");
+        font-display: optional;
+      }
+      @font-face {
+        font-family: "Macondo";
+        font-style: normal;
+        font-weight: 400;
+        src: local("Macondo"),
+          url(/assets/fonts/macondo.woff2) format("woff2");
+        font-display: optional;
+      }
+    </style>
 
     <script type="module" src="/src/main.tsx"></script>
   </head>
