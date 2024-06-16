@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useServerStatus } from "../hooks/useServerStatus";
+import useServerStatus from "../hooks/useServerStatus";
 
 function ServerCard({ width }: { width: string }) {
   const serverStatus = useServerStatus();

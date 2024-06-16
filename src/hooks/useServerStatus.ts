@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ServerStatus } from "../../Types";
+import ServerStatus from "../types/ServerStatus";
 
-export function useServerStatus() {
+export default function useServerStatus() {
   const [serverStatus, setServerStatus] = useState<ServerStatus | null>(null);
 
   useEffect(() => {

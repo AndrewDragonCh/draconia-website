@@ -1,4 +1,4 @@
-export interface ServerStatus {
+export default interface ServerStatus {
   ip: string;
   port: number;
   debug: {

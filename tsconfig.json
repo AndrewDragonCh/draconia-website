@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "Types.ts"],
+  "include": ["src", "src/types/ServerStatus.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
