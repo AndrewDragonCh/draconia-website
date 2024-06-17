@@ -23,18 +23,18 @@ function ServerCard({ width }: { width: string }) {
           onClick={() => copyToClipboard("join.draconia.world")}
           className="cursor-pointer relative text-center w-full p-3 border-2 shadow-lg rounded-3xl"
         >
-          <div id='IP' className="text-center mb-2 sm:text-xl text-base text-white">
+          <div id='IP' className="text-center mb-2 xl:text-2xl md:text-xl text-base text-white">
             Coming Eventually!
           </div>
-          <div id='Players Online' className="relative w-full bg-gray-500 rounded-full sm:h-10 h-7 overflow-hidden mt-2 mb-1">
+          <div id='Players Online' className="relative w-full bg-gray-500 rounded-full xl:h-12 md:h-10 h-7 overflow-hidden xl:mt-4 xl:mb-2 md:mt-2 md:mb-1 mt-1 mb-0.5">
             {serverStatus ? (
               serverStatus.online === false ? (
-                <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">
+                <span className="relative xl:text-lg md:text-base text-xs text-white whitespace-nowrap xl:-bottom-[.5rem] md:-bottom-[.4rem]">
                   Server is offline!
                 </span>
               ) : serverStatus.players ? (
                 <>
-                  <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">
+                  <span className="relative xl:text-lg md:text-base text-xs text-white whitespace-nowrap xl:-bottom-[.5rem] md:-bottom-[.4rem]">
                     {serverStatus.players.online} / {serverStatus.players.max} players online
                   </span>
                   <div
@@ -43,13 +43,13 @@ function ServerCard({ width }: { width: string }) {
                   ></div>
                 </>
               ) : (
-                <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">Loading...</span>
+                <span className="relative xl:text-lg md:text-base text-xs text-white whitespace-nowrap xl:-bottom-[.5rem] md:-bottom-[.4rem]">Loading...</span>
               )
             ) : (
-              <span className="relative sm:text-base text-xs text-white whitespace-nowrap sm:-bottom-[.4rem]">Error loading Status!</span>
+              <span className="relative xl:text-lg md:text-base text-xs text-white whitespace-nowrap xl:-bottom-[.5rem] md:-bottom-[.4rem]">Error loading Status!</span>
             )}
           </div>
-          <div id='Copy Button' className="absolute -bottom-3 right-6 z-10 p-1 bg-white text-black rounded-md sm:text-xs text-[.5rem] shadow-inner" >
+          <div id='Copy Button' className="absolute xl:-bottom-4 md:-bottom-[14px] -bottom-3 right-6 z-10 p-1 bg-white text-black rounded-md xl:text-sm md:text-xs text-[.5rem] shadow-inner" >
             {copySuccess}
           </div>
         </div>

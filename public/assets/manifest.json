@@ -1,6 +1,10 @@
 {
   "name": "Draconia",
   "short_name": "Draconia",
+  "description": "Welcome to the World of Draconia",
+  "dir": "auto",
+  "lang": "en-US",
+  
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "browser",
