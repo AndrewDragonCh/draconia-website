@@ -17,7 +17,7 @@ function BackgroundImage() {
           <>
             <source srcSet="/assets/images/backgrounds/dark.avif" type="image/avif" />
             <source srcSet="/assets/images/backgrounds/dark.webp" type="image/webp" />
-            <img src="/assets/images/backgrounds/dark.png" alt="Background" style={{ 
+            <img fetchPriority='high' src="/assets/images/backgrounds/dark.png" alt="Background" style={{ 
               filter: 'brightness(90%)',
               width: '100%',
               height: '100%',
@@ -28,7 +28,7 @@ function BackgroundImage() {
           <>
             <source srcSet="/assets/images/backgrounds/light.avif" type="image/avif" />
             <source srcSet="/assets/images/backgrounds/light.webp" type="image/webp" />
-            <img src="/assets/images/backgrounds/light.png" alt="Background" style={{ 
+            <img fetchPriority='high' src="/assets/images/backgrounds/light.png" alt="Background" style={{ 
               filter: 'brightness(90%)',
               width: '100%',
               height: '100%',
