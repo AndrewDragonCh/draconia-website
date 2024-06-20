@@ -1,7 +1,8 @@
-import useColorScheme from '../hooks/useColorScheme'; // Adjust the import path as necessary
+import { useContext } from 'react';
+import { ColorSchemeContext } from '../lib/ColorScheme/ColorSchemeContext';
 
 function BackgroundImage() {
-  const colorScheme = useColorScheme();
+  const { colorScheme } = useContext(ColorSchemeContext);
 
   return (
     <div style={{
@@ -18,7 +19,7 @@ function BackgroundImage() {
             <source srcSet="/assets/images/backgrounds/dark.avif" type="image/avif" />
             <source srcSet="/assets/images/backgrounds/dark.webp" type="image/webp" />
             <img fetchPriority='high' src="/assets/images/backgrounds/dark.png" alt="Background" style={{ 
-              filter: 'brightness(90%)',
+              filter: 'brightness(100%)',
               width: '100%',
               height: '100%',
               objectFit: 'cover',
@@ -29,7 +30,7 @@ function BackgroundImage() {
             <source srcSet="/assets/images/backgrounds/light.avif" type="image/avif" />
             <source srcSet="/assets/images/backgrounds/light.webp" type="image/webp" />
             <img fetchPriority='high' src="/assets/images/backgrounds/light.png" alt="Background" style={{ 
-              filter: 'brightness(90%)',
+              filter: 'brightness(75%)',
               width: '100%',
               height: '100%',
               objectFit: 'cover',
