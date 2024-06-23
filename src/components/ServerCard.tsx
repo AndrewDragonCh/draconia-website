@@ -21,7 +21,7 @@ function ServerCard({ width }: { width: string }) {
     <div id='Server Status Card' className={`${width}`}>
         <div
           onClick={() => copyToClipboard("join.draconia.world")}
-          className="cursor-pointer relative text-center w-full p-3 border-2 shadow-lg rounded-3xl"
+          className="cursor-pointer relative text-center w-full p-3 border-2 shadow-lg rounded-3xl plausible-event-name=Copied+IP"
         >
           <div id='IP' className="text-center mb-2 xl:text-2xl md:text-xl text-base text-white">
             Coming Eventually!
