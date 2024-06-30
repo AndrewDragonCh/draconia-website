@@ -4,8 +4,7 @@ import Plausible from 'plausible-tracker'
 
 const { trackEvent, enableAutoPageviews, enableAutoOutboundTracking } = Plausible({
   domain: 'draconia.world',
-  apiHost: 'https://plausible.andrewstill.moe',
-  trackLocalhost: true
+  apiHost: 'https://plausible.andrewstill.moe'
 })
 
 const cleanup1 = enableAutoPageviews()
