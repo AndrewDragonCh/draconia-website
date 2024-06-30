@@ -13,7 +13,7 @@
     <meta name="referrer" content="origin-when-cross-origin" />
     <meta name="metadataBase" content="https://draconia.world" />
     <meta name="referrer" content="strict-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.mcsrvstat.us/ script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.mcsrvstat.us/; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
     <meta http-equiv="Access-Control-Allow-Origin" content="https://draconia.world">
 
     <title>World of Draconia</title>
@@ -41,25 +41,6 @@
 
     <link fetchpriority="high" rel="preload" href="/assets/fonts/macondo.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     <link fetchpriority="high" rel="preload" href="/assets/fonts/noto.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-
-    <style>
-      @font-face {
-        font-family: "Noto Sans Display";
-        font-style: normal;
-        font-weight: 400;
-        src: local("Noto Sans Display"),
-          url(/assets/fonts/noto.woff2) format("woff2");
-        font-display: block;
-      }
-      @font-face {
-        font-family: "Macondo";
-        font-style: normal;
-        font-weight: 400;
-        src: local("Macondo"),
-          url(/assets/fonts/macondo.woff2) format("woff2");
-        font-display: block;
-      }
-    </style>
   </head>
   <body>
     <script type="module" src="/src/main.tsx"></script>
