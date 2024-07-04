@@ -1,6 +1,7 @@
+"use client"
+
 import { useState } from 'react';
 import useServerStatus from "../hooks/useServerStatus";
-import { trackEvent } from '../App';
 
 function ServerCard({ width }: { width: string }) {
   const serverStatus = useServerStatus();
@@ -26,7 +27,7 @@ function ServerCard({ width }: { width: string }) {
           }}
           className="cursor-pointer relative text-center w-full p-3 border-2 shadow-lg rounded-3xl plausible-event-name=Copied+IP"
           onMouseDown={() => {
-            trackEvent('Copied IP');
+            // trackEvent('Copied IP');
           }}
         >
           <div id='IP' className="text-center mb-2 xl:text-2xl md:text-xl text-base text-white">
