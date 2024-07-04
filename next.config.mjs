@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: './dist', // Changes the build output directory to `./dist/`.
+  reactStrictMode: true,
+  distDir: 'build',
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: securityHeaders,
+  //     },
+  //   ]
+  // },
 }
 
 export default nextConfig
