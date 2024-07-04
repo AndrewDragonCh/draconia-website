@@ -1,5 +1,3 @@
-"use client"
-
 import useColorScheme from '../../hooks/useColorScheme';
 import { ColorSchemeContext } from './ColorSchemeContext';  
 
