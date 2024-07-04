@@ -1,15 +1,17 @@
-"use client"
-
 import { useState, useEffect } from 'react';
 
 function useColorScheme() {
   // Initialize state with the color scheme from localStorage if available, otherwise use system preference
   const [colorScheme, setColorScheme] = useState(() => {  
+    if (typeof window !== 'undefined') { // Check if running on client side
       const storedPreference = localStorage.getItem('colorScheme');
       if (storedPreference) {
         return storedPreference;
       }
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    // Default color scheme if window is not available (e.g., during SSR)
+    return 'light';
   });
 
   useEffect(() => {
