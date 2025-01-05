@@ -11,6 +11,7 @@
   "orientation": "any",
   "scope": "/",
   "start_url": "/",
+  "id": "/",
   "categories": ["games", "role-playing", "minecraft"],
   "related_applications": [],
   "prefer_related_applications": false
