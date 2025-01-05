@@ -7,7 +7,11 @@
   
   "theme_color": "#000000",
   "background_color": "#000000",
-  "display": "browser",
+  "display": "standalone",
+  "orientation": "any",
   "scope": "/",
-  "start_url": "/"
+  "start_url": "/",
+  "categories": ["games", "role-playing", "minecraft"],
+  "related_applications": [],
+  "prefer_related_applications": false
 }
