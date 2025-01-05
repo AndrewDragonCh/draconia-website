@@ -1,13 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import App from './App.tsx'
 import './index.css'
 import { ColorSchemeProvider } from './lib/ColorScheme/ColorSchemeProvider.tsx'
 
-ReactDOM.createRoot(document.body).render(
+const root = createRoot(document.body);
+
+root.render(
   <ColorSchemeProvider>
-    <React.StrictMode>
+    <StrictMode>
       <App />
-    </React.StrictMode>
+    </StrictMode>
   </ColorSchemeProvider>
-)
+);
