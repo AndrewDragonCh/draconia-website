@@ -8,6 +8,7 @@
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",
+  "display_override": ["browser", "minimal-ui"],
   "orientation": "any",
   "scope": "/",
   "start_url": "/",
