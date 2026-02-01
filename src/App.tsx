@@ -1,14 +1,5 @@
 import BackgroundImage from './components/BackgroundImage';
 import ServerCard from './components/ServerCard';
-import Plausible from 'plausible-tracker'
-
-const { trackEvent, enableAutoPageviews, enableAutoOutboundTracking } = Plausible({
-  domain: 'draconia.world',
-  apiHost: 'https://plausible.andrewstill.moe'
-})
-
-const cleanup1 = enableAutoPageviews()
-const cleanup2 = enableAutoOutboundTracking()
 
 function App() {
   cleanup1()
