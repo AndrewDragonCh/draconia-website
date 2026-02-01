@@ -2,8 +2,6 @@ import BackgroundImage from './components/BackgroundImage';
 import ServerCard from './components/ServerCard';
 
 function App() {
-  cleanup1()
-  cleanup2()
   return (
     <main className='flex flex-col items-center justify-center w-screen h-screen'>
       <BackgroundImage />
@@ -13,5 +11,4 @@ function App() {
   );
 }
 
-export { trackEvent };
 export default App;
