@@ -4,8 +4,6 @@ import useServerStatus from "../hooks/useServerStatus";
 function ServerCard({ width }: { width: string }) {
   const serverStatus = useServerStatus();
 
-  console.log(serverStatus)
-
   const [copySuccess, setCopySuccess] = useState('Click to copy');
 
   const copyToClipboard = async (text: string) => {

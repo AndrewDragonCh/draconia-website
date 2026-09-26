@@ -6,7 +6,7 @@ export default function useServerStatus() {
 
   useEffect(() => {
     const fetchServerStatus = async () => {
-      const response = await fetch('https://api.dragonaere.net/join.hypixel.net');
+      const response = await fetch('https://api.dragonaere.net/join.draconia.world');
       const data = await response.json();
       setServerStatus(data);
     };
