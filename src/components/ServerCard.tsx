@@ -4,6 +4,8 @@ import useServerStatus from "../hooks/useServerStatus";
 function ServerCard({ width }: { width: string }) {
   const serverStatus = useServerStatus();
 
+  console.log(serverStatus)
+
   const [copySuccess, setCopySuccess] = useState('Click to copy');
 
   const copyToClipboard = async (text: string) => {
@@ -36,13 +38,10 @@ function ServerCard({ width }: { width: string }) {
                 </span>
               ) : serverStatus.players ? (
                 <>
+                  <div className="absolute inset-y-0 left-0 bg-gray-700 rounded-full" style={{ width: `${Math.min(100, (serverStatus.players.online / serverStatus.players.max) * 100 )}%`, }} />
                   <span className="relative xl:text-lg md:text-base text-xs text-white whitespace-nowrap xl:-bottom-[.5rem] md:-bottom-[.4rem]">
                     {serverStatus.players.online} / {serverStatus.players.max} players online
                   </span>
-                  <div
-                    className="bg-gray-900 h-6 rounded-full"
-                    style={{ width: `${(serverStatus.players.online / serverStatus.players.max) * 100}%` }}
-                  ></div>
                 </>
               ) : (
                 <span className="relative xl:text-lg md:text-base text-xs text-white whitespace-nowrap xl:-bottom-[.5rem] md:-bottom-[.4rem]">Loading...</span>
